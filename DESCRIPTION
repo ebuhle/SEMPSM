@@ -1,14 +1,17 @@
 Package: SEMPSM
-Title: What the Package Does (One Line, Title Case)
+Title: Structural Equation Modeling for Pre-Spawning Mortality Using Stan
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Eric",
+           family = "Buhle",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
+           email = "eric.buhle@noaa.gov",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: What license it uses
+Description: SEMPSM is an R package for fitting hierarchical Bayesian structural equation
+    models tailored to the landscape ecotoxicology of salmon pre-spawning mortality. 
+    Estimation is done by Hamiltonian Monte Carlo in Stan, and R functions to fit models
+    and compute posterior quantities of interest are included.
+License: GPL (>= 3.0)
 Encoding: UTF-8
 LazyData: true
 Biarch: true
@@ -18,7 +21,9 @@ Imports:
     methods,
     Rcpp (>= 0.12.0),
     rstan (>= 2.18.1),
-    rstantools (>= 2.0.0.9000)
+    rstantools (>= 2.0.0.9000),
+    shinystan,
+    loo
 LinkingTo: 
     BH (>= 1.66.0),
     Rcpp (>= 0.12.0),
