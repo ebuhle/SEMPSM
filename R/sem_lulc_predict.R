@@ -14,10 +14,10 @@
 #' @param linpred Logical indicating whether to return the linear predictor (the
 #'   default is \code{FALSE}).
 #'
-#' @return List with elements \describe{ \item{\code{X}} An \code{iter x
-#'   N_new} matrix containing posterior samples of the predicted landscape variable.
-#'   \item{\code{g_mu_X}} And \code{iter x N_new} matrix containing posterior samples of the linear
-#'   predictor evaluated at the specified values of \emph{Z} }
+#' @return List with elements \describe{ \item{\code{X}}{An \code{iter x
+#'   N_new} matrix containing posterior samples of the predicted landscape variable.}
+#'   \item{\code{g_mu_X}}{An \code{iter x N_new} matrix containing posterior samples of the linear
+#'   predictor evaluated at the specified values of \emph{Z}.} }
 #'
 #' @export
 

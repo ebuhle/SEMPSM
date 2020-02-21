@@ -29,13 +29,13 @@
 #' @param alpha Confidence level.
 #' 
 #' @return A list with elements \describe{ 
-#' \item{\code{zeros}} An iter x \emph{S} matrix, 
+#' \item{\code{zeros}}{An iter x \emph{S} matrix, 
 #' where \emph{S} is the number of sites in \code{fit}, containing posterior samples of 
-#' the site-specific zeros of \emph{P(PSM | Z) - psm_crit} as a function of \emph{Z}
-#' \item{\code{z_crit}} Numeric vector of length \emph{S} containing site-specific critical
-#' \emph{Z}-values.
-#' \item{\code{delta_z}} Numeric vector of length \emph{S} containing differences between
-#' \code{z_crit} and the \emph{alpha}-th posterior quantile of site-specific \emph{Z}.
+#' the site-specific zeros of \emph{P(PSM | Z) - psm_crit} as a function of \emph{Z}.}
+#' \item{\code{z_crit}}{Numeric vector of length \emph{S} containing site-specific critical
+#' \emph{Z}-values.}
+#' \item{\code{delta_z}}{Numeric vector of length \emph{S} containing differences between
+#' \code{z_crit} and the \emph{alpha}-th posterior quantile of site-specific \emph{Z}.}
 #' }
 #' 
 #' @export

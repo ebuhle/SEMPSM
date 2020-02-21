@@ -24,10 +24,10 @@
 #' latent factor(s).
 #'
 #' @return List with elements \describe{
-#' \item{\code{est}} An \code{iter x N_new} matrix containing posterior samples of the predicted probability 
-#' (or the linear predictor of logit probability, if \code{transform == FALSE}) of PSM. 
-#' \item{\code{gradient}} An \code{iter x N_new x K} array whose \code{[,,k]} panel contains posterior
-#' samples of the gradient of PSM with respect to the \code{k}-th factor, evaluated at \code{newZ}. 
+#' \item{\code{est}}{An \code{iter x N_new} matrix containing posterior samples of the predicted probability 
+#' (or the linear predictor of logit probability, if \code{transform == FALSE}) of PSM.} 
+#' \item{\code{gradient}}{An \code{iter x N_new x K} array whose \code{[,,k]} panel contains posterior
+#' samples of the gradient of PSM with respect to the \code{k}-th factor, evaluated at \code{newZ}.}
 #' }
 #' 
 #' @export
