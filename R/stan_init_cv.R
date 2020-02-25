@@ -1,3 +1,13 @@
+#' Generate Initial Parameter Values Using a Fitted Model
+#' 
+#' @param fit A Stanfit object containing posterior samples from a pres-spawning mortality
+#' structural equation model, as returned by [SEMPSM::SEMPSM]. Initial values are drawn
+#' randomly from the joint posterior in \code{fit}.
+#' 
+#' @return A named list of initial parameter values to be passed to[rstan::stan].
+#' 
+#' @export
+
 #---------------------------------------------------------------------
 # Function to generate initial values for SEM for cross-validation,
 # using previously fitted full model 

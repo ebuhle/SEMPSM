@@ -1,8 +1,12 @@
-#------------------------------------------------------
-# Function to generate initial values for SEM
-#------------------------------------------------------
+#' Generate Initial Parameter Values
+#' 
+#' @param stan_dat A named list of data to be passed to Stan, as returned by 
+#' [SEMPSM::stan_data].
+#' 
+#' @return A named list of initial parameter values to be passed to[rstan::stan].
+#' 
+#' @export
 
-# Function to generate initial values for chains
 stan_init <- function(stan_dat) 
 {
   with(stan_dat, {

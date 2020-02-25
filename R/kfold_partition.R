@@ -1,6 +1,21 @@
-# Randomly partition sites into groups for cross-validation
-# Sites are randomly partitioned into K groups that are
-# roughly similar in size (i.e., number of observations).
+#' K-Fold Partition
+#' 
+#' Randomly partition sites into groups for cross-validation.
+#' Sites are randomly partitioned into K groups that are
+#' roughly similar in size (i.e., number of observations). If multiple permutations
+#' are requested, \code{kfold_partition} returns the one with the smallest range
+#' of group sizes. 
+#' 
+#' @param psm_dat A data frame with a column of class factor named \code{site}.
+#' @param K A positive integer giving the number of groups.
+#' @param N_random A natural number giving the number of random permutations to compare.
+#' 
+#' @return A named list with components \describe{ \item{\code{N_group}}{A vector of group sizes.
+#' \item{group}{A vector giving the group membership of each row in \code{psm_dat}.} }.
+#' 
+#' @export
+
+
 
 kfold_partition <- function(psm_dat, K, N_random = 1000)
 {
