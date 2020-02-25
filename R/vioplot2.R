@@ -1,3 +1,10 @@
+#' Modified Violin Plot
+#' 
+#' Modified version of [vioplot::vioplot] that plots lines at specified quantiles. See [vioplot::vioplot]
+#' for description of arguments.
+#'
+#' @export
+
 vioplot2 <- function (x, ..., range = 1.5, h = NULL, quantiles = NULL, ylim = NULL, 
                       names = NULL,  horizontal = FALSE, col = "lightblue", border = "black", 
                       lty = 1, lwd = 1, lty.quantile = 1, lwd.quantile = 1,

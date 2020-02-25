@@ -10,8 +10,8 @@
 #' @param K A positive integer giving the number of groups.
 #' @param N_random A natural number giving the number of random permutations to compare.
 #' 
-#' @return A named list with components \describe{ \item{\code{N_group}}{A vector of group sizes.
-#' \item{group}{A vector giving the group membership of each row in \code{psm_dat}.} }.
+#' @return A named list with components \describe{ \item{\code{N_group}}{A vector of group sizes.}
+#' \item{group}{A vector giving the group membership of each row in \code{psm_dat}.} }
 #' 
 #' @export
 
