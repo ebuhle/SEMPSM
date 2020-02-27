@@ -14,8 +14,10 @@ kfold_partition(psm_dat, K, N_random = 1000)
 \item{N_random}{A natural number giving the number of random permutations to compare.}
 }
 \value{
-A named list with components \describe{ \item{\code{N_group}}{A vector of group sizes.}
-\item{group}{A vector giving the group membership of each row in \code{psm_dat}.} }
+A named list with components \describe{ 
+\item{\code{N_group}}{A vector of group sizes.}
+\item{group}{A vector giving the group membership of each row in \code{psm_dat}.} 
+}
 }
 \description{
 Randomly partition sites into groups for cross-validation.

@@ -8,11 +8,11 @@ stan_init_cv(fit)
 }
 \arguments{
 \item{fit}{A Stanfit object containing posterior samples from a pres-spawning mortality
-structural equation model, as returned by [SEMPSM::SEMPSM]. Initial values are drawn
+structural equation model, as returned by \code{\link[SEMPSM]{SEMPSM}}. Initial values are drawn
 randomly from the joint posterior in \code{fit}.}
 }
 \value{
-A named list of initial parameter values to be passed to[rstan::stan].
+A named list of initial parameter values to be passed to \code{\link[rstan]{stan}}.
 }
 \description{
 Generate Initial Parameter Values Using a Fitted Model
