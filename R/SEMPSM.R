@@ -63,7 +63,7 @@ SEMPSM <- function(psm, X, normal_indx, gamma_indx, L = 1, fit = NULL,
                         I0_Z = I0_Z, I_su = I_su, I_su_Z = I_su_Z, I_fa = I_fa, I_fa_Z = I_fa_Z, 
                         I_fit = I_fit, I_lpd = I_lpd)
   
-  out <- rstan::sampling(SEMPSM::stanmodels$SEMPSM,
+  out <- rstan::sampling(stanmodels$SEMPSM,
                          data = stan_dat, 
                          init = if(is.null(fit)) {
                            lapply(1:3, function(i) stan_init(stan_dat))
