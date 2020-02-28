@@ -71,4 +71,5 @@ SEMPSM <- function(psm, X, normal_indx, gamma_indx, L = 1, fit = NULL,
                            lapply(1:3, function(i) stan_init_cv(fit))
                          },
                          pars = pars, chains = chains, iter = iter, warmup = warmup, thin = thin)
+  return(out)
 }
