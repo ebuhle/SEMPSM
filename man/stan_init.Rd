@@ -8,10 +8,10 @@ stan_init(stan_dat)
 }
 \arguments{
 \item{stan_dat}{A named list of data to be passed to Stan, as returned by 
-\code{\link[SEMPSM]{stan_data}}.}
+[SEMPSM::stan_data()].}
 }
 \value{
-A named list of initial parameter values to be passed to \link[rstan]{stan}.
+A named list of initial parameter values to be passed to [rstan::stan()].
 }
 \description{
 Generate Initial Parameter Values

@@ -2,12 +2,12 @@
 
 #include <Rcpp.h>
 using namespace Rcpp ;
-#include "stanExports_cohoPSM_SEM.h"
+#include "stanExports_SEMPSM.h"
 
-RCPP_MODULE(stan_fit4cohoPSM_SEM_mod) {
+RCPP_MODULE(stan_fit4SEMPSM_mod) {
 
 
-    class_<rstan::stan_fit<stan_model, boost::random::ecuyer1988> >("model_cohoPSM_SEM")
+    class_<rstan::stan_fit<stan_model, boost::random::ecuyer1988> >("model_SEMPSM")
 
     .constructor<SEXP,SEXP,SEXP>()
 

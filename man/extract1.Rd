@@ -11,12 +11,12 @@ extract1(object, par, ...)
 
 \item{par}{Character string providing the parameter (or other quantity) name of interest.}
 
-\item{...}{Additional arguments to be passed to \code{\link[rstan]{extract}}.}
+\item{...}{Additional arguments to be passed to [rstan::extract()].}
 }
 \value{
 When permuted = TRUE (the default), this function returns an array 
 representing samples for \code{par} with all chains merged together.
 }
 \description{
-Wrapper for \code{\link[rstan]{extract}} making it less cumbersome to extract a single parameter.
+Wrapper for [rstan::extract()] making it less cumbersome to extract a single parameter.
 }

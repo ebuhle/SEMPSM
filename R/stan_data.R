@@ -3,7 +3,41 @@
 #' Assemble list of data to be passed to [rstan::stan()].
 #'
 #' @param psm A data frame with rows corresponding to observations, including columns named
-#' \code{}
+#' \describe{
+#' \item{\code{site}}{A factor giving site names.}
+#' \item{\code{ppt_su}}{A numeric variable giving summer precipitation in mm.}
+#' \item{\code{ppt_fa}}{A numeric variable giving fall precipitation in mm.}
+#' \item{\code{n}}{An integer variable giving the number of carcasss sampled.}
+#' \item{\code{n_psm}}{An integer variable giving the number of pre-spawning mortalities
+#' in each sample.}
+#' }
+#' @param X A matrix with rows corresponding to sites and columns corresponding to 
+#' landscape variables, to be modeled as either normal- or gamma-distributed.
+#' @param normal_indx An integer vector giving indices of columns of X to be modeled
+#' as normally distributed.
+#' @param gamma_indx An integer vector giving indices of columns of X to be modeled as
+#' gamma-distributed.
+#' @param L Integer giving the number of latent landscape factors to fit.
+#' @param I0_Z Integer (0/1) indicating whether to include main effects of latent landscape 
+#' factors on pre-spawning mortality risk.
+#' @param I_su Integer (0/1) indicating whether to include a main effect of summer precipitation
+#' on pre-spawning mortality risk.
+#' @param I_su_Z Integer (0/1) indicating whether to include interactions between 
+#' summer precipitation and latent landscape factors on pre-spawning mortality risk.
+#' @param I_fa Integer (0/1) indicating whether to include a main effect of fall precipitation
+#' on pre-spawning mortality risk.
+#' @param I_fa_Z Integer (0/1) indicating whether to include interactions between 
+#' fall precipitation and latent landscape factors on pre-spawning mortality risk.
+#' @param I_fit Integer vector (0/1) of length \code{nrow(psm)} indicating whether each
+#' pre-spawning mortality observation should be included in the likelihood. This may be
+#' useful for fitting some observations while simulating from the posterior predictive
+#' distribution for others.
+#' @param I_lpd Integer vector (0/1) of length \code{nrow(psm)} indicating whether
+#' to evaluate the log posterior predictive density for each observation.
+#' 
+#' @return A named list of data to be passed to [SEMPSM::SEMPSM()].
+#' 
+#' @export
 
 stan_data <- function(psm, X, normal_indx, gamma_indx, L = 1,
                       I0_Z = 1, I_su = 1, I_su_Z = 1, I_fa = 1, I_fa_Z = 1, 

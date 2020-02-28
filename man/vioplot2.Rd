@@ -29,6 +29,6 @@ vioplot2(
 )
 }
 \description{
-Modified version of [vioplot::vioplot] that plots lines at specified quantiles. See 
-\code{\link[vioplot]{vioplot}} for description of arguments.
+Modified version of [vioplot::vioplot()] that plots lines at specified quantiles. See 
+[vioplot::vioplot()] for description of arguments.
 }

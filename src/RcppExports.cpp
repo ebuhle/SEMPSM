@@ -7,10 +7,10 @@
 using namespace Rcpp;
 
 
-RcppExport SEXP _rcpp_module_boot_stan_fit4cohoPSM_SEM_mod();
+RcppExport SEXP _rcpp_module_boot_stan_fit4SEMPSM_mod();
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_rcpp_module_boot_stan_fit4cohoPSM_SEM_mod", (DL_FUNC) &_rcpp_module_boot_stan_fit4cohoPSM_SEM_mod, 0},
+    {"_rcpp_module_boot_stan_fit4SEMPSM_mod", (DL_FUNC) &_rcpp_module_boot_stan_fit4SEMPSM_mod, 0},
     {NULL, NULL, 0}
 };
 

@@ -1,6 +1,6 @@
 #' Generate Initial Parameter Values Using a Fitted Model
 #' 
-#' @param fit A Stanfit object containing posterior samples from a pres-spawning mortality
+#' @param fit A stanfit object containing posterior samples from a pres-spawning mortality
 #' structural equation model, as returned by [SEMPSM::SEMPSM()]. Initial values are drawn
 #' randomly from the joint posterior in \code{fit}.
 #' 
