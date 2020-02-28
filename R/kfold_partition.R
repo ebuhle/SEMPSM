@@ -1,7 +1,7 @@
 #' K-Fold Partition
 #' 
 #' Randomly partition sites into groups for cross-validation.
-#' Sites are randomly partitioned into K groups that are
+#' Sites are randomly partitioned into \emph{K} groups that are
 #' roughly similar in size (i.e., number of observations). If multiple permutations
 #' are requested, \code{kfold_partition} returns the one with the smallest range
 #' of group sizes. 

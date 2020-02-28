@@ -10,9 +10,9 @@ sem_z_crit(fit, data, psm_crit, level = "site", alpha)
 \item{fit}{Object of class \code{stanfit} representing a fitted PSM SEM. Parameters 
 \code{mu_b0}, \code{sigma_b0}, \code{b0_std}, and \code{b0_Z} must be monitored.}
 
-\item{data}{The data list passed to \code{stan()} to estimate \code{fit}.}
+\item{data}{The data list passed to [rstan::stan()] to estimate \code{fit}.}
 
-\item{psm_crit}{PSM threshold in (0,1).}
+\item{psm_crit}{PSM threshold in the interval (0,1).}
 
 \item{level}{Level of grouping at which to predict. Options are \code{"site"}
 (site-specific interannual average, the default) or \code{"year"}

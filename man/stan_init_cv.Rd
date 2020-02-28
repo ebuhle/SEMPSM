@@ -15,5 +15,7 @@ randomly from the joint posterior in \code{fit}.}
 A named list of initial parameter values to be passed to [rstan::stan()].
 }
 \description{
-Generate Initial Parameter Values Using a Fitted Model
+Generate initial parameter values for fitting a structural equation model 
+of pre-spawning mortality by drawing a sample from the posterior of a previously 
+fitted model. This may be useful in a setting such as cross-validation.
 }

@@ -15,7 +15,7 @@ Parameters \code{a0}, \code{A}, and \code{phi} must be monitored.}
 \item{d}{Integer in {1, ..., \emph{D}} indicating which landscape
 variable to simulate.}
 
-\item{newZ}{Matrix of dimension \code{N_new x K} giving the \emph{K} factor
+\item{newZ}{Matrix of dimension \code{N_new x L} giving the \emph{L} factor
 scores for each new prediction. If \code{NULL}, the posterior samples of
 site-specific factor scores are used.}
 

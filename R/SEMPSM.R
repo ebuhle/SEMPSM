@@ -14,9 +14,9 @@
 #' }
 #' @param X A matrix with rows corresponding to sites and columns corresponding to 
 #' landscape variables, to be modeled as either normal- or gamma-distributed.
-#' @param normal_indx An integer vector giving indices of columns of X to be modeled
+#' @param normal_indx An integer vector giving indices of columns of \code{X} to be modeled
 #' as normally distributed.
-#' @param gamma_indx An integer vector giving indices of columns of X to be modeled as
+#' @param gamma_indx An integer vector giving indices of columns of \code{X} to be modeled as
 #' gamma-distributed.
 #' @param L Integer giving the number of latent landscape factors to fit.
 #' @param fit Stanfit object as returned by a previous call to [SEMPSM::SEMPSM()]. If

@@ -33,10 +33,10 @@ in each sample.}
 \item{X}{A matrix with rows corresponding to sites and columns corresponding to 
 landscape variables, to be modeled as either normal- or gamma-distributed.}
 
-\item{normal_indx}{An integer vector giving indices of columns of X to be modeled
+\item{normal_indx}{An integer vector giving indices of columns of \code{X} to be modeled
 as normally distributed.}
 
-\item{gamma_indx}{An integer vector giving indices of columns of X to be modeled as
+\item{gamma_indx}{An integer vector giving indices of columns of \code{X} to be modeled as
 gamma-distributed.}
 
 \item{L}{Integer giving the number of latent landscape factors to fit.}

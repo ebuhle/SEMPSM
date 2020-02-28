@@ -8,7 +8,7 @@
 #' @param data The data list passed to \code{stan()} to estimate \code{fit}.
 #' @param d Integer in {1, ..., \emph{D}} indicating which landscape
 #'   variable to simulate.
-#' @param newZ Matrix of dimension \code{N_new x K} giving the \emph{K} factor
+#' @param newZ Matrix of dimension \code{N_new x L} giving the \emph{L} factor
 #'   scores for each new prediction. If \code{NULL}, the posterior samples of
 #'   site-specific factor scores are used.
 #' @param linpred Logical indicating whether to return the linear predictor (the

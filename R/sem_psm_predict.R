@@ -4,7 +4,7 @@
 #' possibly conditioned on specified values of the latent factor(s). 
 #' 
 #' Currently predictions can only be made for sites (with or without PSM data)
-#' used to fit the model, and for sample-average precipitation conditions (i.e., precip effects
+#' used to fit the model, and for sample-average precipitation conditions (i.e., precipitation effects
 #' are set to zero). These restrictions will be lifted in a later version.
 #'
 #' @param fit Object of class \code{stanfit} representing a fitted PSM SEM. Parameters 
@@ -12,7 +12,7 @@
 #' @param data The data list passed to \code{stan()} to estimate \code{fit}.
 #' @param newsites Numeric vector of length \code{N_new} giving the site numbers 
 #' (coded as in \code{data}) for which predictions are to be made.
-#' @param newZ Matrix of dimension \code{N_new x K} giving the \emph{K} factor scores
+#' @param newZ Matrix of dimension \code{N_new x L} giving the \emph{L} factor scores
 #' for each new prediction. If \code{NULL}, the posterior samples of site-specific factor
 #' scores are used.
 #' @param level Level of grouping at which to predict. Options are \code{"site"}
@@ -26,8 +26,8 @@
 #' @return List with elements \describe{
 #' \item{\code{est}}{An \code{iter x N_new} matrix containing posterior samples of the predicted probability 
 #' (or the linear predictor of logit probability, if \code{transform == FALSE}) of PSM.} 
-#' \item{\code{gradient}}{An \code{iter x N_new x K} array whose \code{[,,k]} panel contains posterior
-#' samples of the gradient of PSM with respect to the \code{k}-th factor, evaluated at \code{newZ}.}
+#' \item{\code{gradient}}{An \code{iter x N_new x L} array whose \code{[,,l]} panel contains posterior
+#' samples of the gradient of PSM with respect to the \code{l}-th factor, evaluated at \code{newZ}.}
 #' }
 #' 
 #' @export

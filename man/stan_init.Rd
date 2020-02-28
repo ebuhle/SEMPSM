@@ -11,8 +11,9 @@ stan_init(stan_dat)
 [SEMPSM::stan_data()].}
 }
 \value{
-A named list of initial parameter values to be passed to [rstan::stan()].
+A named list of initial parameter values to be passed to [rstan::sampling()].
 }
 \description{
-Generate Initial Parameter Values
+Generate initial parameter values for fitting a structural equation model 
+of pre-spawning mortality using Stan.
 }
