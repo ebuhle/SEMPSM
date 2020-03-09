@@ -4,13 +4,18 @@
 \alias{sem_z_crit}
 \title{Critical Z-Values from an SEM Given a PSM Threshold}
 \usage{
-sem_z_crit(fit, data, psm_crit, level = "site", alpha)
+sem_z_crit(fit, data, newsites = NULL, psm_crit, level = "site", alpha)
 }
 \arguments{
 \item{fit}{Object of class \code{stanfit} representing a fitted PSM SEM. Parameters 
 \code{mu_b0}, \code{sigma_b0}, \code{b0_std}, and \code{b0_Z} must be monitored.}
 
-\item{data}{The data list passed to [rstan::stan()] to estimate \code{fit}.}
+\item{data}{The data list passed to [rstan::sampling()] to estimate \code{fit},
+as returned by [SEMPSM::stan_data()].}
+
+\item{newsites}{Optional numeric vector of length \code{N_new} giving the site numbers 
+(coded as in \code{data}) for which predictions are to be made. If \code{newsites} is
+not specified, the default is to use all sites in \code{data}.}
 
 \item{psm_crit}{PSM threshold in the interval (0,1).}
 

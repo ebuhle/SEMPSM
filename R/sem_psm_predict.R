@@ -9,10 +9,12 @@
 #'
 #' @param fit Object of class \code{stanfit} representing a fitted PSM SEM. Parameters 
 #' \code{mu_b0}, \code{sigma_b0}, \code{b0_std}, and \code{b0_Z} must be monitored.
-#' @param data The data list passed to \code{stan()} to estimate \code{fit}.
-#' @param newsites Numeric vector of length \code{N_new} giving the site numbers 
-#' (coded as in \code{data}) for which predictions are to be made.
-#' @param newZ Matrix of dimension \code{N_new x L} giving the \emph{L} factor scores
+#' @param data The data list passed to [rstan::sampling()] to estimate \code{fit},
+#' as returned by [SEMPSM::stan_data()].
+#' @param newsites Optional numeric vector of length \code{N_new} giving the site numbers 
+#' (coded as in \code{data}) for which predictions are to be made. If \code{newsites} is
+#' not specified, the default is to use all sites in \code{data}.
+#' @param newZ Optional matrix of dimension \code{N_new x L} giving the \emph{L} factor scores
 #' for each new prediction. If \code{NULL}, the posterior samples of site-specific factor
 #' scores are used.
 #' @param level Level of grouping at which to predict. Options are \code{"site"}
@@ -32,10 +34,11 @@
 #' 
 #' @export
 
-sem_psm_predict <- function(fit, data, newsites, newZ = NULL, level = "site", 
+sem_psm_predict <- function(fit, data, newsites = NULL, newZ = NULL, level = "site", 
                             transform = FALSE, gradient = FALSE) 
 {
   samples <- extract(fit)
+  if(is.null(newsites)) newsites <- sort(unique(data$site))
   
   with(c(data, samples), {
     

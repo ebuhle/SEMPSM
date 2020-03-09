@@ -4,10 +4,10 @@
 \alias{stan_init}
 \title{Generate Initial Parameter Values}
 \usage{
-stan_init(stan_dat)
+stan_init(data)
 }
 \arguments{
-\item{stan_dat}{A named list of data to be passed to Stan, as returned by 
+\item{data}{A named list of data to be passed to Stan, as returned by 
 [SEMPSM::stan_data()].}
 }
 \value{

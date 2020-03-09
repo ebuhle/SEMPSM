@@ -21,7 +21,11 @@
 #'
 #' @param fit Object of class \code{stanfit} representing a fitted PSM SEM. Parameters 
 #' \code{mu_b0}, \code{sigma_b0}, \code{b0_std}, and \code{b0_Z} must be monitored.
-#' @param data The data list passed to [rstan::stan()] to estimate \code{fit}.
+#' @param data The data list passed to [rstan::sampling()] to estimate \code{fit},
+#' as returned by [SEMPSM::stan_data()].
+#' @param newsites Optional numeric vector of length \code{N_new} giving the site numbers 
+#' (coded as in \code{data}) for which predictions are to be made. If \code{newsites} is
+#' not specified, the default is to use all sites in \code{data}.
 #' @param psm_crit PSM threshold in the interval (0,1).
 #' @param level Level of grouping at which to predict. Options are \code{"site"}
 #'  (site-specific interannual average, the default) or \code{"year"}
@@ -40,15 +44,17 @@
 #' 
 #' @export
 
-sem_z_crit <- function(fit, data, psm_crit, level = "site", alpha) 
+sem_z_crit <- function(fit, data, newsites = NULL, psm_crit, level = "site", alpha) 
 {
   samples <- extract(fit)
+  if(is.null(newsites)) newsites <- sort(unique(data$site))
   logit_psm_crit <- qlogis(psm_crit)
   
   out <- with(c(samples, data), {
     
     iter <- nrow(b0_std)
-    S <- ncol(b0_std)
+    # S <- ncol(b0_std)
+    S <- length(newsites)
     
     intercept <- as.vector(mu_b0) + as.vector(sigma_b0) * b0_std # add precip effects #
     if(level == "year") {
@@ -62,8 +68,8 @@ sem_z_crit <- function(fit, data, psm_crit, level = "site", alpha)
     if(F0 >= 1 - alpha) 
       stop(paste0("alpha = ", alpha, ", but P(slope > 0 | data) = ",  F0))
     
-    zeros <- sweep(logit_psm_crit - intercept, 1, slope, "/")
-    z_crit <- matrixStats::colQuantiles(zeros[slope > 0,], probs = 1 - alpha / (1 - F0))
+    zeros <- sweep(logit_psm_crit - intercept[,newsites,drop = FALSE], 1, slope, "/")
+    z_crit <- matrixStats::colQuantiles(zeros[slope > 0,,drop = FALSE], probs = 1 - alpha / (1 - F0))
     delta_z <- z_crit - matrixStats::colQuantiles(Z[,,1], probs = alpha)
 
     list(zeros = zeros, z_crit = z_crit, delta_z = delta_z)

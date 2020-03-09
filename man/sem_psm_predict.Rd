@@ -7,7 +7,7 @@
 sem_psm_predict(
   fit,
   data,
-  newsites,
+  newsites = NULL,
   newZ = NULL,
   level = "site",
   transform = FALSE,
@@ -18,12 +18,14 @@ sem_psm_predict(
 \item{fit}{Object of class \code{stanfit} representing a fitted PSM SEM. Parameters 
 \code{mu_b0}, \code{sigma_b0}, \code{b0_std}, and \code{b0_Z} must be monitored.}
 
-\item{data}{The data list passed to \code{stan()} to estimate \code{fit}.}
+\item{data}{The data list passed to [rstan::sampling()] to estimate \code{fit},
+as returned by [SEMPSM::stan_data()].}
 
-\item{newsites}{Numeric vector of length \code{N_new} giving the site numbers 
-(coded as in \code{data}) for which predictions are to be made.}
+\item{newsites}{Optional numeric vector of length \code{N_new} giving the site numbers 
+(coded as in \code{data}) for which predictions are to be made. If \code{newsites} is
+not specified, the default is to use all sites in \code{data}.}
 
-\item{newZ}{Matrix of dimension \code{N_new x L} giving the \emph{L} factor scores
+\item{newZ}{Optional matrix of dimension \code{N_new x L} giving the \emph{L} factor scores
 for each new prediction. If \code{NULL}, the posterior samples of site-specific factor
 scores are used.}
 

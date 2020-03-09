@@ -3,16 +3,16 @@
 #' Generate initial parameter values for fitting a structural equation model 
 #' of pre-spawning mortality using Stan.
 #' 
-#' @param stan_dat A named list of data to be passed to Stan, as returned by 
+#' @param data A named list of data to be passed to Stan, as returned by 
 #' [SEMPSM::stan_data()].
 #' 
 #' @return A named list of initial parameter values to be passed to [rstan::sampling()].
 #' 
 #' @export
 
-stan_init <- function(stan_dat) 
+stan_init <- function(data) 
 {
-  with(stan_dat, {
+  with(data, {
     # X <- t(X)
     D <- D_normal + D_gamma
     
