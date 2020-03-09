@@ -65,7 +65,7 @@ distribution for others.}
 to evaluate the log posterior predictive density for each observation.}
 }
 \value{
-A named list of data to be passed to [SEMPSM::SEMPSM()].
+A named list of data to be passed to [SEMPSM::sem_psm()].
 }
 \description{
 Assemble list of data to be passed to [rstan::stan()].

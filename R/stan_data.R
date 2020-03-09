@@ -35,7 +35,7 @@
 #' @param I_lpd Integer vector (0/1) of length \code{nrow(psm)} indicating whether
 #' to evaluate the log posterior predictive density for each observation.
 #' 
-#' @return A named list of data to be passed to [SEMPSM::SEMPSM()].
+#' @return A named list of data to be passed to [SEMPSM::sem_psm()].
 #' 
 #' @export
 

@@ -8,7 +8,7 @@ stan_init_cv(fit)
 }
 \arguments{
 \item{fit}{A stanfit object containing posterior samples from a pres-spawning mortality
-structural equation model, as returned by [SEMPSM::SEMPSM()]. Initial values are drawn
+structural equation model, as returned by [SEMPSM::sem_psm()]. Initial values are drawn
 randomly from the joint posterior in \code{fit}.}
 }
 \value{

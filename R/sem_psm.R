@@ -19,7 +19,7 @@
 #' @param gamma_indx An integer vector giving indices of columns of \code{X} to be modeled as
 #' gamma-distributed.
 #' @param L Integer giving the number of latent landscape factors to fit.
-#' @param fit Stanfit object as returned by a previous call to [SEMPSM::SEMPSM()]. If
+#' @param fit Stanfit object as returned by a previous call to [SEMPSM::sem_psm()]. If
 #' not NULL, initial values will be drawn randomly from the posterior samples in \code{fit}
 #' using [SEMPSM::stan_init_cv()]; otherwise they will be generated using [SEMPSM::stan_init()].
 #' @param I0_Z Integer (0/1) indicating whether to include main effects of latent landscape 
@@ -49,7 +49,7 @@
 #' 
 #' @export
 
-SEMPSM <- function(psm, X, normal_indx, gamma_indx, L = 1, fit = NULL,
+sem_psm <- function(psm, X, normal_indx, gamma_indx, L = 1, fit = NULL,
                    I0_Z = 1, I_su = 1, I_su_Z = 1, I_fa = 1, I_fa_Z = 1, 
                    I_fit = rep(1, nrow(psm)), I_lpd = rep(1, nrow(psm)),
                    pars = c("a0","A","Z","phi","g_mu_X",
@@ -63,7 +63,7 @@ SEMPSM <- function(psm, X, normal_indx, gamma_indx, L = 1, fit = NULL,
                         I0_Z = I0_Z, I_su = I_su, I_su_Z = I_su_Z, I_fa = I_fa, I_fa_Z = I_fa_Z, 
                         I_fit = I_fit, I_lpd = I_lpd)
   
-  out <- rstan::sampling(stanmodels$SEMPSM,
+  out <- rstan::sampling(stanmodels$sem_psm,
                          data = stan_dat, 
                          init = if(is.null(fit)) {
                            lapply(1:3, function(i) stan_init(stan_dat))
