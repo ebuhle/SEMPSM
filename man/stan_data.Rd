@@ -30,7 +30,7 @@ stan_data(
 in each sample.}
 }}
 
-\item{X}{A matrix with rows corresponding to sites and columns corresponding to 
+\item{X}{A matrix with rows corresponding to sites and columns corresponding to
 landscape variables, to be modeled as either normal- or gamma-distributed.}
 
 \item{normal_indx}{An integer vector giving indices of columns of \code{X} to be modeled
@@ -41,19 +41,19 @@ gamma-distributed.}
 
 \item{L}{Integer giving the number of latent landscape factors to fit.}
 
-\item{I0_Z}{Integer (0/1) indicating whether to include main effects of latent landscape 
+\item{I0_Z}{Integer (0/1) indicating whether to include main effects of latent landscape
 factors on pre-spawning mortality risk.}
 
 \item{I_su}{Integer (0/1) indicating whether to include a main effect of summer precipitation
 on pre-spawning mortality risk.}
 
-\item{I_su_Z}{Integer (0/1) indicating whether to include interactions between 
+\item{I_su_Z}{Integer (0/1) indicating whether to include interactions between
 summer precipitation and latent landscape factors on pre-spawning mortality risk.}
 
 \item{I_fa}{Integer (0/1) indicating whether to include a main effect of fall precipitation
 on pre-spawning mortality risk.}
 
-\item{I_fa_Z}{Integer (0/1) indicating whether to include interactions between 
+\item{I_fa_Z}{Integer (0/1) indicating whether to include interactions between
 fall precipitation and latent landscape factors on pre-spawning mortality risk.}
 
 \item{I_fit}{Integer vector (0/1) of length \code{nrow(psm)} indicating whether each
@@ -65,8 +65,8 @@ distribution for others.}
 to evaluate the log posterior predictive density for each observation.}
 }
 \value{
-A named list of data to be passed to [SEMPSM::sem_psm()].
+A named list of data to be passed to \code{\link[SEMPSM:sem_psm]{SEMPSM::sem_psm()}}.
 }
 \description{
-Assemble list of data to be passed to [rstan::stan()].
+Assemble list of data to be passed to \code{\link[rstan:stan]{rstan::stan()}}.
 }

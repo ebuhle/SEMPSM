@@ -15,13 +15,13 @@ sem_psm_predict(
 )
 }
 \arguments{
-\item{fit}{Object of class \code{stanfit} representing a fitted PSM SEM. Parameters 
+\item{fit}{Object of class \code{stanfit} representing a fitted PSM SEM. Parameters
 \code{mu_b0}, \code{sigma_b0}, \code{b0_std}, and \code{b0_Z} must be monitored.}
 
-\item{data}{The data list passed to [rstan::sampling()] to estimate \code{fit},
-as returned by [SEMPSM::stan_data()].}
+\item{data}{The data list passed to \code{\link[rstan:sampling]{rstan::sampling()}} to estimate \code{fit},
+as returned by \code{\link[SEMPSM:stan_data]{SEMPSM::stan_data()}}.}
 
-\item{newsites}{Optional numeric vector of length \code{N_new} giving the site numbers 
+\item{newsites}{Optional numeric vector of length \code{N_new} giving the site numbers
 (coded as in \code{data}) for which predictions are to be made. If \code{newsites} is
 not specified, the default is to use all sites in \code{data}.}
 
@@ -30,10 +30,10 @@ for each new prediction. If \code{NULL}, the posterior samples of site-specific 
 scores are used.}
 
 \item{level}{Level of grouping at which to predict. Options are \code{"site"}
-(site-specific interannual average, the default) or \code{"year"} 
+(site-specific interannual average, the default) or \code{"year"}
 (include year-within-site residual variation).}
 
-\item{transform}{Logical indicating whether to return the linear predictor (\code{FALSE}, 
+\item{transform}{Logical indicating whether to return the linear predictor (\code{FALSE},
 the default) or inverse-logit transform it.}
 
 \item{gradient}{Logical indicating whether to compute the gradient of PSM risk with respect to the
@@ -41,14 +41,14 @@ latent factor(s).}
 }
 \value{
 List with elements \describe{
-\item{\code{est}}{An \code{iter x N_new} matrix containing posterior samples of the predicted probability 
-(or the linear predictor of logit probability, if \code{transform == FALSE}) of PSM.} 
+\item{\code{est}}{An \code{iter x N_new} matrix containing posterior samples of the predicted probability
+(or the linear predictor of logit probability, if \code{transform == FALSE}) of PSM.}
 \item{\code{gradient}}{An \code{iter x N_new x L} array whose \code{[,,l]} panel contains posterior
 samples of the gradient of PSM with respect to the \code{l}-th factor, evaluated at \code{newZ}.}
 }
 }
 \description{
-Compute the posterior predictive distribution of PSM risk from a fitted SEM, 
+Compute the posterior predictive distribution of PSM risk from a fitted SEM,
 possibly conditioned on specified values of the latent factor(s).
 }
 \details{

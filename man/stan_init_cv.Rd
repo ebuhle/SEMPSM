@@ -8,14 +8,14 @@ stan_init_cv(fit)
 }
 \arguments{
 \item{fit}{A stanfit object containing posterior samples from a pres-spawning mortality
-structural equation model, as returned by [SEMPSM::sem_psm()]. Initial values are drawn
+structural equation model, as returned by \code{\link[SEMPSM:sem_psm]{SEMPSM::sem_psm()}}. Initial values are drawn
 randomly from the joint posterior in \code{fit}.}
 }
 \value{
-A named list of initial parameter values to be passed to [rstan::stan()].
+A named list of initial parameter values to be passed to \code{\link[rstan:stan]{rstan::stan()}}.
 }
 \description{
-Generate initial parameter values for fitting a structural equation model 
-of pre-spawning mortality by drawing a sample from the posterior of a previously 
+Generate initial parameter values for fitting a structural equation model
+of pre-spawning mortality by drawing a sample from the posterior of a previously
 fitted model. This may be useful in a setting such as cross-validation.
 }

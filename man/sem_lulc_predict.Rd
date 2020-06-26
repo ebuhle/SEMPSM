@@ -25,8 +25,8 @@ default is \code{FALSE}).}
 \value{
 List with elements \describe{ \item{\code{X}}{An \code{iter x
   N_new} matrix containing posterior samples of the predicted landscape variable.}
-  \item{\code{g_mu_X}}{An \code{iter x N_new} matrix containing posterior samples of the linear
-  predictor evaluated at the specified values of \emph{Z}.} }
+\item{\code{g_mu_X}}{An \code{iter x N_new} matrix containing posterior samples of the linear
+predictor evaluated at the specified values of \emph{Z}.} }
 }
 \description{
 Compute the posterior predictive distribution of landscape variables from a

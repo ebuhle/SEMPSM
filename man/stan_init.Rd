@@ -7,13 +7,13 @@
 stan_init(data)
 }
 \arguments{
-\item{data}{A named list of data to be passed to Stan, as returned by 
-[SEMPSM::stan_data()].}
+\item{data}{A named list of data to be passed to Stan, as returned by
+\code{\link[SEMPSM:stan_data]{SEMPSM::stan_data()}}.}
 }
 \value{
-A named list of initial parameter values to be passed to [rstan::sampling()].
+A named list of initial parameter values to be passed to \code{\link[rstan:sampling]{rstan::sampling()}}.
 }
 \description{
-Generate initial parameter values for fitting a structural equation model 
+Generate initial parameter values for fitting a structural equation model
 of pre-spawning mortality using Stan.
 }

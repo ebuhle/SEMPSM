@@ -39,7 +39,7 @@ sem_psm(
 in each sample.}
 }}
 
-\item{X}{A matrix with rows corresponding to sites and columns corresponding to 
+\item{X}{A matrix with rows corresponding to sites and columns corresponding to
 landscape variables, to be modeled as either normal- or gamma-distributed.}
 
 \item{normal_indx}{An integer vector giving indices of columns of \code{X} to be modeled
@@ -50,23 +50,23 @@ gamma-distributed.}
 
 \item{L}{Integer giving the number of latent landscape factors to fit.}
 
-\item{fit}{Stanfit object as returned by a previous call to [SEMPSM::sem_psm()]. If
+\item{fit}{Stanfit object as returned by a previous call to \code{\link[SEMPSM:sem_psm]{SEMPSM::sem_psm()}}. If
 not NULL, initial values will be drawn randomly from the posterior samples in \code{fit}
-using [SEMPSM::stan_init_cv()]; otherwise they will be generated using [SEMPSM::stan_init()].}
+using \code{\link[SEMPSM:stan_init_cv]{SEMPSM::stan_init_cv()}}; otherwise they will be generated using \code{\link[SEMPSM:stan_init]{SEMPSM::stan_init()}}.}
 
-\item{I0_Z}{Integer (0/1) indicating whether to include main effects of latent landscape 
+\item{I0_Z}{Integer (0/1) indicating whether to include main effects of latent landscape
 factors on pre-spawning mortality risk.}
 
 \item{I_su}{Integer (0/1) indicating whether to include a main effect of summer precipitation
 on pre-spawning mortality risk.}
 
-\item{I_su_Z}{Integer (0/1) indicating whether to include interactions between 
+\item{I_su_Z}{Integer (0/1) indicating whether to include interactions between
 summer precipitation and latent landscape factors on pre-spawning mortality risk.}
 
 \item{I_fa}{Integer (0/1) indicating whether to include a main effect of fall precipitation
 on pre-spawning mortality risk.}
 
-\item{I_fa_Z}{Integer (0/1) indicating whether to include interactions between 
+\item{I_fa_Z}{Integer (0/1) indicating whether to include interactions between
 fall precipitation and latent landscape factors on pre-spawning mortality risk.}
 
 \item{I_fit}{Integer vector (0/1) of length \code{nrow(psm)} indicating whether each
@@ -87,10 +87,10 @@ to evaluate the log posterior predictive density for each observation.}
 
 \item{thin}{A positive integer specifying the period for saving samples.}
 
-\item{...}{Other arguments to be passed to [rstan::sampling()].}
+\item{...}{Other arguments to be passed to \code{\link[rstan:sampling]{rstan::sampling()}}.}
 }
 \value{
-An object of S4 class [rstan::stanfit].
+An object of S4 class \link[rstan:stanfit]{rstan::stanfit}.
 }
 \description{
 Fit a hierarchical Bayesian structural equation model to data on pre-spawning mortality

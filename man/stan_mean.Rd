@@ -11,13 +11,13 @@ stan_mean(object, pars)
 
 \item{pars}{Character string providing the parameter (or other quantity) name of interest.}
 
-\item{...}{Additional arguments to be passed to [rstan::get_posterior_mean()].}
+\item{...}{Additional arguments to be passed to \code{\link[rstan:get_posterior_mean]{rstan::get_posterior_mean()}}.}
 }
 \value{
-When permuted = TRUE (the default), this function returns an array 
+When permuted = TRUE (the default), this function returns an array
 representing samples for \code{par} with all chains merged together.
 }
 \description{
-Wrapper for [rstan::get_posterior_mean()] making it less cumbersome to extract 
+Wrapper for \code{\link[rstan:get_posterior_mean]{rstan::get_posterior_mean()}} making it less cumbersome to extract
 the mean of a parameter (or other quantity) across all chains.
 }
