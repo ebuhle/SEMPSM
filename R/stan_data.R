@@ -4,7 +4,8 @@
 #'
 #' @param psm A data frame with rows corresponding to observations, including columns named
 #' \describe{
-#' \item{\code{site}}{A factor giving site names.}
+#' \item{\code{site}}{A factor or character vector giving site names. If a character vector,
+#' it will be coerced to factor.}
 #' \item{\code{ppt_su}}{A numeric variable giving summer precipitation in mm.}
 #' \item{\code{ppt_fa}}{A numeric variable giving fall precipitation in mm.}
 #' \item{\code{n}}{An integer variable giving the number of carcasss sampled.}
@@ -48,7 +49,7 @@ stan_data <- function(psm, X, normal_indx, gamma_indx, L = 1,
        X = X, 
        L = L,
        N = nrow(psm), 
-       site = as.numeric(psm$site),
+       site = as.numeric(factor(psm$site)),
        ppt_su = array(as.vector(scale(psm$ppt_su/10, scale = FALSE)), dim = nrow(psm)),
        ppt_fa = array(as.vector(scale(psm$ppt_fa/10, scale = FALSE)), dim = nrow(psm)),
        I0_Z = I0_Z,

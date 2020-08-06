@@ -22,7 +22,8 @@ stan_data(
 \arguments{
 \item{psm}{A data frame with rows corresponding to observations, including columns named
 \describe{
-\item{\code{site}}{A factor giving site names.}
+\item{\code{site}}{A factor or character vector giving site names. If a character vector,
+it will be coerced to factor.}
 \item{\code{ppt_su}}{A numeric variable giving summer precipitation in mm.}
 \item{\code{ppt_fa}}{A numeric variable giving fall precipitation in mm.}
 \item{\code{n}}{An integer variable giving the number of carcasss sampled.}
